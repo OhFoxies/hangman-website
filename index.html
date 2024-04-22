@@ -7,11 +7,26 @@
     <title>Wisielec</title>
 </head>
 <body>
-    <div class="wrapper">
+<div class="wrapper">
+    <div class="lost" id="lost">
+        <p>Przegrałaś/eś!</p>
+    </div>
+        <div class=lost"" id="won">
+        <p>Wygrałaś/eś!</p>
+    </div>
+    <div class="main-game">
         <div class="game">
             <div class="letters" id="letters">
+                <div class="letter-cell">
+                    <p class="letter" style="opacity: 0">X</p>
+                    <span class="underline" style="opacity: 0"></span>
+                </div>
+            </div>
+            <div class="game-display">
+                <p id="mistakes">Błędy 0/7</p>
             </div>
         </div>
+
         <div class="keyboard">
             <div class="keyboard-row" id="row1">
                 <div class="button"><p>Ą</p></div>
@@ -56,9 +71,15 @@
                 <div class="button"><p>N</p></div>
                 <div class="button"><p>M</p></div>
             </div>
+            <div class="keyboard-row">
+                <input type="button" value="Resetuj" onclick="reset()">
+                <input type="button" value="Start" onclick="start()">
+            </div>
         </div>
+
     </div>
-    <script src="script.js"></script>
+</div>
+<script src="script.js"></script>
 
 </body>
 </html>

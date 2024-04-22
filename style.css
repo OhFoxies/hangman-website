@@ -13,18 +13,40 @@
     flex-flow: column;
 }
 
-.keyboard {
-    flex-grow: 10;
+body {
+    font-size: 16px;
+    background-color: #7BD389;
+}
+
+.main-game {
+    max-width: 600px;
+    width: 100%;
+}
+
+.game-display {
+    width: 100%;
+    min-height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column nowrap;
+    color: white;
+    font-size: 90px;
 }
+
+.game-display p {
+    text-align: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .game {
     padding: 2vw;
     flex-grow: 90;
     display: flex;
-    /*justify-content: center;*/
     align-items: center;
     flex-flow: column nowrap;
 }
@@ -32,6 +54,8 @@
 .letters {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1vh;
 }
 
@@ -40,23 +64,43 @@
     justify-content: space-between;
     align-items: center;
     flex-flow: column nowrap;
-
-    font-size: 3vw;
-    /*width: 3vw;*/
-    /*height: 3vw;*/
     position: relative;
+    font-size: 44px;
 }
 
-/*.letter {*/
-/*    font-size: 3vw;*/
-
-/*}*/
 
 .underline {
     height: 5px;
-    width: 3vw;
-    /*position: absolute;*/
+    width: 50px;
     background-color: black;
+}
+
+input[type='button'] {
+    flex: 1 1;
+    min-height: 46px;
+    margin: 3px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #2c8358;
+    color: white;
+    transition: .2s;
+}
+
+input[type='button']:hover {
+    background-color: #349f6a;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .button {
+        font-size: 14px !important;
+        margin: 1.5px !important;
+        padding: 4.5px !important;
+
+    }
 }
 
 .button {
@@ -64,18 +108,50 @@
     justify-content: center;
     align-items: center;
 
-    margin: 0.2vw;
-    width: 4vw;
-    height: 4vw;
-    border: 1px solid black;
-    border-radius: 0.2vw;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 3px;
+    flex: 1 1;
+    padding: 3px;
+    min-height: 46px;
+    cursor: pointer;
+
+    transition: .2s;
+
+    border-radius: 4px;
+    background-color: #A3BAC3;
+
 }
 
 .button:hover {
     background-color: darkgrey;
 }
+
+#lost, #won {
+    width: 0;
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    font-size: 50px;
+    transition: 2s;
+    display: flex;
+}
+
 .keyboard-row {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
 
 }
+
+#lost p, #won p {
+    color: white;
+}
+
+.show {
+    opacity: 1 !important;
+    width: 100% !important;
+}
+
